@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: athiebau <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: athiebau <athiebau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/10 15:13:45 by athiebau          #+#    #+#             */
-/*   Updated: 2023/05/10 15:13:51 by athiebau         ###   ########.fr       */
+/*   Updated: 2023/10/24 12:14:45 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static char	**free_array(char **ptr, int i)
 		free(ptr[i]);
 	}
 	free(ptr);
-	return (0);
+	return (NULL);
 }
 
 static int	ft_count_words(char const *str, char c)

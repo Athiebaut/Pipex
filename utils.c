@@ -6,7 +6,7 @@
 /*   By: athiebau <athiebau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:59:17 by athiebau          #+#    #+#             */
-/*   Updated: 2023/10/23 17:16:17 by athiebau         ###   ########.fr       */
+/*   Updated: 2023/10/24 14:45:52 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char	*ft_get_the_path(t_pipex *info)
 		return (info->cmd[0]);
 	while(info->path_env[++i])
 	{
-		path = ft_strjoin(info->path_env[i], '/');
+		path = ft_strjoin(info->path_env[i], "/");
 		path2 = ft_strjoin(path, info->cmd[0]);
 		free(path);
 		if (access(path2, F_OK | X_OK) == 0)
@@ -50,18 +50,18 @@ char	*ft_get_the_path(t_pipex *info)
 	return (NULL);
 }
 
-void	ft_exec(t_pipex *info, char *argv, char **env)
-{
-	char	*path;
-	
-	info->cmd = ft_split(argv, ' ');
-	path = ft_get_the_path(info);
-	if (path == NULL)
-		ft_exit(E_PATH);
-	if (execve(path, argv, env) == -1)
+void	ft_exec(t_pipex *info, char *cmd, char **env)
+{	
+	info->cmd = ft_split(cmd, ' ');
+	if (!info->cmd)
+		ft_exit(E_SPLIT, info);	
+	info->path_cmd = ft_get_the_path(info);
+	if (!info->path_cmd)
+		ft_exit(E_PATH, info);
+	if (execve(info->path_cmd, info->cmd, env) == -1)
 	{
 		ft_putstr_fd("Pipex: command not found: ", 2);
-		ft_putstr_fd(argv, 2);
-		exit(0);
+		ft_putstr_fd(cmd, 2);
+		ft_exit(E_EXEC, info);
 	}
 }

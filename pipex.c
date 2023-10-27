@@ -6,7 +6,7 @@
 /*   By: athiebau <athiebau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/13 14:47:26 by athiebau          #+#    #+#             */
-/*   Updated: 2023/10/24 15:48:41 by athiebau         ###   ########.fr       */
+/*   Updated: 2023/10/26 12:36:34 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,6 @@ void	ft_exit(int signal, t_pipex *info)
 				free(info->path_cmd);
 		}
 	}
-	if (signal != END)
-		ft_putstr_fd("Error\n", 2);
 	exit(-1);
 }
 

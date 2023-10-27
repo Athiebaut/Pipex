@@ -6,7 +6,7 @@
 /*   By: athiebau <athiebau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/23 15:59:17 by athiebau          #+#    #+#             */
-/*   Updated: 2023/10/24 14:45:52 by athiebau         ###   ########.fr       */
+/*   Updated: 2023/10/26 13:56:47 by athiebau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,21 @@ char	*ft_get_the_path(t_pipex *info)
 
 void	ft_exec(t_pipex *info, char *cmd, char **env)
 {	
+
+	char *c = "oui";
 	info->cmd = ft_split(cmd, ' ');
 	if (!info->cmd)
 		ft_exit(E_SPLIT, info);	
 	info->path_cmd = ft_get_the_path(info);
 	if (!info->path_cmd)
-		ft_exit(E_PATH, info);
+	{
+		ft_putstr_fd("pipex: ", 2);
+		(perror(cmd), ft_exit(E_PATH, info));
+	}
 	if (execve(info->path_cmd, info->cmd, env) == -1)
 	{
-		ft_putstr_fd("Pipex: command not found: ", 2);
-		ft_putstr_fd(cmd, 2);
+		ft_putstr_fd("pipex: ", 2);
+		perror(cmd);
 		ft_exit(E_EXEC, info);
 	}
 }

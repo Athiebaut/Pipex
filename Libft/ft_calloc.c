@@ -12,6 +12,20 @@
 
 #include "libft.h"
 
+/**
+ * ft_calloc - Allocates memory for an array of elements and initializes it to zero.
+ *
+ * @nb_elem: The number of elements to allocate.
+ * @size: The size of each element in bytes.
+ *
+ * This function allocates memory for an array of `nb_elem` elements, each of size `size`,
+ * and initializes all bytes in the allocated memory to zero. It performs an overflow check
+ * to ensure that the multiplication of `nb_elem` and `size` does not exceed the maximum
+ * allowable size for memory allocation. If the allocation fails or the overflow check fails,
+ * the function returns NULL.
+ *
+ * Return: A pointer to the allocated and zero-initialized memory, or NULL if the allocation fails.
+ */
 void	*ft_calloc(size_t nb_elem, size_t size)
 {
 	void	*tab;

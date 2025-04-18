@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ * @brief Converts an unsigned integer to a string representation.
+ *
+ * This helper function populates the string `str` with the digits of the unsigned integer `nb`,
+ * starting from the least significant digit and working backwards.
+ *
+ * @param str The string buffer to populate with the number's digits.
+ * @param nb The unsigned integer to convert.
+ * @param size The index in the string buffer where the conversion should start.
+ * @return A pointer to the populated string buffer.
+ */
 static char	*ft_char(char *str, unsigned int nb, long int size)
 {
 	while (nb > 0)
@@ -23,6 +34,15 @@ static char	*ft_char(char *str, unsigned int nb, long int size)
 	return (str);
 }
 
+/**
+ * @brief Calculates the number of characters needed to represent an integer as a string.
+ *
+ * This helper function determines the size of the string required to represent the integer `nb`,
+ * including space for a negative sign if applicable and the null terminator.
+ *
+ * @param nb The integer whose string size is to be calculated.
+ * @return The size of the string required to represent the integer.
+ */
 static long int	str_size(int nb)
 {
 	int	size;
@@ -38,6 +58,15 @@ static long int	str_size(int nb)
 	return (size);
 }
 
+/**
+ * @brief Converts an integer to a null-terminated string.
+ *
+ * The ft_itoa function converts the integer `n` to its string representation and returns a pointer
+ * to the newly allocated string. The caller is responsible for freeing the allocated memory.
+ *
+ * @param n The integer to convert.
+ * @return A pointer to the string representation of the integer, or NULL if memory allocation fails.
+ */
 char	*ft_itoa(int n)
 {
 	char			*str;

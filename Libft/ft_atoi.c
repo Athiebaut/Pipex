@@ -12,6 +12,27 @@
 
 #include "libft.h"
 
+/**
+ * @file ft_atoi.c
+ * @brief Implementation of the ft_atoi function, which converts a string to an integer.
+ *
+ * @details
+ * The ft_atoi function parses the initial portion of the string pointed to by `str`
+ * and converts it to an integer. It handles optional leading whitespace characters,
+ * an optional '+' or '-' sign, and numeric characters. The function stops parsing
+ * when a non-numeric character is encountered.
+ *
+ * @param str A pointer to the null-terminated string to be converted.
+ * 
+ * @return The integer value represented by the string, taking into account the sign.
+ * If no valid conversion can be performed, the function returns 0.
+ *
+ * @note
+ * - The function skips leading whitespace characters such as spaces, tabs, and newlines.
+ * - If the string starts with a '-' sign, the resulting integer will be negative.
+ * - If the string starts with a '+' sign, it is ignored.
+ * - The function does not handle overflow or underflow conditions.
+ */
 int	ft_atoi(const char *str)
 {
 	int	i;

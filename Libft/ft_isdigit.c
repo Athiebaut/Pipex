@@ -12,6 +12,16 @@
 
 #include "libft.h"
 
+/**
+ * @file ft_isdigit.c
+ * @brief Checks if a character is a digit.
+ *
+ * This function determines whether the given character (represented as an
+ * integer) is a numeric digit (0-9) based on its ASCII value.
+ *
+ * @param c The character to check, represented as an integer.
+ * @return 1 if the character is a digit (ASCII values 48 to 57), 0 otherwise.
+ */
 int	ft_isdigit(int c)
 {
 	if (c >= 48 && c <= 57)

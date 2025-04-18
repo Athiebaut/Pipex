@@ -12,6 +12,17 @@
 
 #include "libft.h"
 
+/**
+ * @brief Allocates (with malloc) and initializes a new element of a linked list.
+ * 
+ * @param content The content to store in the new element.
+ * 
+ * @return A pointer to the new element, or NULL if the allocation fails.
+ * 
+ * The function creates a new linked list element (t_list) and initializes its
+ * content with the provided value. The 'next' pointer of the new element is
+ * set to NULL.
+ */
 t_list	*ft_lstnew(void *content)
 {
 	t_list	*lst;

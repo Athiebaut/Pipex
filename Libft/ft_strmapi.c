@@ -12,6 +12,21 @@
 
 #include "libft.h"
 
+/**
+ * ft_strmapi - Applies a function to each character of a string to create a 
+ *              new string resulting from successive applications of the function.
+ *
+ * @s: The input string on which the function will be applied.
+ * @f: A function that takes an unsigned int (index) and a char (character at 
+ *     that index) as arguments, and returns a char (the transformed character).
+ *
+ * Return: A newly allocated string resulting from applying the function `f` 
+ *         to each character of the input string `s`. If memory allocation fails 
+ *         or if `s` is NULL, the function returns NULL.
+ *
+ * Note: The caller is responsible for freeing the returned string to avoid 
+ *       memory leaks.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	size;

@@ -12,6 +12,24 @@
 
 #include "libft.h"
 
+/**
+ * ft_strnstr - Locates the first occurrence of the null-terminated string
+ *              `to_find` within the string `str`, searching at most `len`
+ *              characters.
+ *
+ * @param str: The string to be searched.
+ * @param to_find: The substring to locate within `str`.
+ * @param len: The maximum number of characters to search in `str`.
+ *
+ * @return A pointer to the first occurrence of `to_find` in `str` if found,
+ *         or NULL if `to_find` is not found within the first `len` characters.
+ *         If `to_find` is an empty string, the function returns `str`.
+ *
+ * Note:
+ * - If both `str` and `len` are NULL, the function returns NULL.
+ * - The search stops when `len` characters are checked or the end of `str`
+ *   is reached, whichever comes first.
+ */
 char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
 	size_t	i;

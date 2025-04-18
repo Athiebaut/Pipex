@@ -12,6 +12,21 @@
 
 #include "libft.h"
 
+/**
+ * @file ft_putnbr_fd.c
+ * @brief Outputs an integer to the given file descriptor.
+ *
+ * This function takes an integer and a file descriptor as input and writes
+ * the integer to the specified file descriptor. It handles negative numbers
+ * by outputting a '-' sign and converting the number to its absolute value
+ * before processing. The function uses recursion to handle multi-digit numbers.
+ *
+ * @param nb The integer to output.
+ * @param fd The file descriptor to write to.
+ *
+ * @note This function relies on the helper function `ft_putchar_fd` to write
+ *       individual characters to the file descriptor.
+ */
 void	ft_putnbr_fd(int nb, int fd)
 {
 	unsigned int	n;

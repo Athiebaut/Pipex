@@ -12,6 +12,15 @@
 
 #include "libft.h"
 
+/**
+ * @file ft_strlen.c
+ * @brief Implementation of the ft_strlen function.
+ *
+ * This function calculates the length of a null-terminated string.
+ *
+ * @param str A pointer to the null-terminated string whose length is to be calculated.
+ * @return The length of the string (number of characters before the null terminator).
+ */
 size_t	ft_strlen(const char *str)
 {
 	int	i;
